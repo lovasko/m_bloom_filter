@@ -4,7 +4,7 @@
 #include "m_bloom_filter.h"
 
 int
-m_bloom_filter_init(struct m_bloom_filter* bf, uint32_t n, float err)
+m_bloom_filter_init(m_bloom_filter* bf, uint32_t n, float err)
 {
 	float bits;
 
@@ -30,8 +30,7 @@ m_bloom_filter_init(struct m_bloom_filter* bf, uint32_t n, float err)
 }
 
 int
-m_bloom_filter_dup(struct m_bloom_filter* bf_dup,
-                   struct m_bloom_filter* bf_orig)
+m_bloom_filter_dup(m_bloom_filter* bf_dup, m_bloom_filter* bf_orig)
 {
 	int ret;
 
@@ -50,7 +49,7 @@ m_bloom_filter_dup(struct m_bloom_filter* bf_dup,
 }
 
 int
-m_bloom_filter_free(struct m_bloom_filter* bf)
+m_bloom_filter_free(m_bloom_filter* bf)
 {
 	if (bf == NULL)
 		return M_BLOOM_FILTER_E_NULL;

@@ -5,7 +5,7 @@
 #include "m_bloom_filter.h"
 
 int
-m_bloom_filter_add(struct m_bloom_filter* bf, void* data, size_t size)
+m_bloom_filter_add(m_bloom_filter* bf, void* data, size_t size)
 {
 	uint32_t i;
 
@@ -24,7 +24,7 @@ m_bloom_filter_add(struct m_bloom_filter* bf, void* data, size_t size)
 }
 
 int
-m_bloom_filter_test(struct m_bloom_filter* bf, void* data, size_t size)
+m_bloom_filter_test(m_bloom_filter* bf, void* data, size_t size)
 {
 	uint32_t i;
 
